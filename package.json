@@ -1,13 +1,14 @@
 {
   "name": "cssspriter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "css spriter",
   "main": "sprite.js",
   "dependencies": {
+    "cssom" : "*",
+    "pngjs" : "*"
   },
   "bundledDependencies" :[
-    "cssom",
-    "pngjs"
+
   ],
   "devDependencies": {},
   "scripts": {
