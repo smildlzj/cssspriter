@@ -1,0 +1,31 @@
+{
+  "name": "cssspriter",
+  "version": "0.0.1",
+  "description": "css spriter",
+  "main": "sprite.js",
+  "dependencies": {
+  },
+  "bundledDependencies" :[
+    "cssom",
+    "pngjs"
+  ],
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smildlzj/cssspriter"
+  },
+  "keywords": [
+    "css",
+    "sprite",
+    "nodejs"
+  ],
+  "author": "luzhujun",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/smildlzj/cssspriter/issues"
+  },
+  "homepage": "https://github.com/smildlzj/cssspriter"
+}
