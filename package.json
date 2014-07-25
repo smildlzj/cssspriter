@@ -1,11 +1,15 @@
 {
   "name": "cssspriter",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "css spriter",
-  "main": "sprite.js",
+  "main": "cssspriter.js",
+  "bin":{
+    "cssspriter": "bin/cssspriter"
+  },
   "dependencies": {
     "cssom" : "*",
-    "pngjs" : "*"
+    "pngjs" : "*",
+    "commander" : "*"
   },
   "bundledDependencies" :[
 

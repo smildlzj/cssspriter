@@ -1,0 +1,48 @@
+#!/usr/bin/env node
+
+//****************************************************************
+// 对命令行调用做支持
+//****************************************************************
+
+var 
+    program = require('commander'),
+    pkg = require("../package.json"),
+    cssspriter = require('../cssspriter');
+
+
+function handleHelpCommand(){
+    console.log('  Examples:');
+    console.log('');
+    console.log('    cssspriter -h');
+    console.log('    cssspriter -i style.css, style2.css, style3.css');
+    console.log('    cssspriter -i style1.css -o style_sprite.css');
+    console.log('');
+    console.log('  see more: ' + pkg.homepage);
+}
+
+program
+    .version(pkg.version)
+    .usage('-i <file ...> -o <file ...>')
+    .option('-i,--inputs [file inputs]', 'input files, split with ","')
+    .option('-o,--outputs [file outputs]', 'output files, split with ","')
+    .on('--help', handleHelpCommand)
+    .parse(process.argv);
+
+if(program.inputs){
+    if(!program.inputs){
+        console.log("you haven't specify a css file");
+        return;
+    }
+
+    var inputs = program.inputs.split(","),
+        outputs = (program.outputs || "").split(",");
+
+    for(var i = 0 , len = inputs.length ; i < len ; i++){
+        cssspriter.add(inputs[i] , i < outputs.length ? outputs[i] : null );
+    }
+
+    cssspriter.process();
+
+}else{
+    handleHelpCommand();
+}
