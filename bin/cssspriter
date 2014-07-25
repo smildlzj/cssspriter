@@ -11,11 +11,9 @@ var
 
 
 function handleHelpCommand(){
-    console.log('  Examples:');
+    console.log('  Help:');
     console.log('');
     console.log('    cssspriter -h');
-    console.log('    cssspriter -i style.css, style2.css, style3.css');
-    console.log('    cssspriter -i style1.css -o style_sprite.css');
     console.log('');
     console.log('  see more: ' + pkg.homepage);
 }
@@ -23,8 +21,9 @@ function handleHelpCommand(){
 program
     .version(pkg.version)
     .usage('-i <file ...> -o <file ...>')
-    .option('-i,--inputs [file inputs]', 'input files, split with ","')
-    .option('-o,--outputs [file outputs]', 'output files, split with ","')
+    .option('-i,--inputs [file inputs]', 'input css files, split with ","')
+    .option('-o,--outputs [file outputs]', 'output css files, split with ","')
+    .option('-f , --file [sprite image file]', 'output sprite image file')
     .on('--help', handleHelpCommand)
     .parse(process.argv);
 
@@ -41,7 +40,7 @@ if(program.inputs){
         cssspriter.add(inputs[i] , i < outputs.length ? outputs[i] : null );
     }
 
-    cssspriter.process();
+    cssspriter.process(program.file);
 
 }else{
     handleHelpCommand();
