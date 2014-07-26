@@ -1,6 +1,6 @@
 {
   "name": "cssspriter",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "css spriter",
   "main": "cssspriter.js",
   "bin":{
@@ -9,6 +9,7 @@
   "dependencies": {
     "cssom" : "*",
     "pngjs" : "*",
+    "crypto" : "*",
     "commander" : "*"
   },
   "bundledDependencies" :[

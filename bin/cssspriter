@@ -23,6 +23,7 @@ program
     .usage('-i <file ...> -o <file ...>')
     .option('-i,--inputs [file inputs]', 'input css files, split with ","')
     .option('-o,--outputs [file outputs]', 'output css files, split with ","')
+    .option('-d , --dir [sprite image dir]', 'output sprite image dir')
     .option('-f , --file [sprite image file]', 'output sprite image file')
     .on('--help', handleHelpCommand)
     .parse(process.argv);
@@ -40,7 +41,7 @@ if(program.inputs){
         cssspriter.add(inputs[i] , i < outputs.length ? outputs[i] : null );
     }
 
-    cssspriter.process(program.file);
+    cssspriter.process(program.dir || program.file);
 
 }else{
     handleHelpCommand();
