@@ -13,7 +13,8 @@ var process = function(file){
     var dir;
     if(!file){
         //当前目录
-        dir = __dirname + "/";
+        dir = path.resolve(".") + "/";
+        console.log(dir);
         file =  history.load(dir).spriteImgName;
     }else if(io.isDirectory(file)){
         //指定目录
