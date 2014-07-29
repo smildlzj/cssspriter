@@ -14,7 +14,6 @@ var process = function(file){
     if(!file){
         //当前目录
         dir = path.resolve(".") + "/";
-        console.log(dir);
         file =  history.load(dir).spriteImgName;
     }else if(io.isDirectory(file)){
         //指定目录
