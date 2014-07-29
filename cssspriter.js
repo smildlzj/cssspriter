@@ -2,12 +2,18 @@ var
     path = require('path'),
     css = require("./lib/css"),
     io = require("./lib/io"),
+    data = require("./lib/data"),
     history = require("./lib/history");
 
 
 //main
 //css.add("test1/t.css");
 //css.process();
+
+var init = function(){
+    data.css.length = 0;
+    data.images.clear();
+}
 
 var process = function(file){
     var dir;
@@ -39,7 +45,8 @@ var process = function(file){
     history.save({
         spriteImgName : path.relative(dir , file)
     });
-};
 
+};
+exports.init = init;
 exports.add = css.add;
 exports.process = process;
