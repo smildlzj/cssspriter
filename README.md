@@ -2,40 +2,41 @@
 
 Usage
 ==========
-Usage: cssspriter -i file ... -o file ...
+### Command-line usage
+    Usage: cssspriter -i file ... -o file ...
 
-Options:
+    Options:
+      -h, --help                       output usage information
+      -V, --version                    output the version number
+      -i,--inputs [file inputs]        input css files, split with ","
+      -o,--outputs [file outputs]      output css files, split with ","
+      -d , --dir [sprite image dir]    output sprite image dir
+      -f , --file [sprite image file]  output sprite image file
 
-  -h, --help                       output usage information
-
-  -V, --version                    output the version number
-
-  -i,--inputs [file inputs]        input css files, split with ","
-
-  -o,--outputs [file outputs]      output css files, split with ","
-
-  -d , --dir [sprite image dir]    output sprite image dir
-
-  -f , --file [sprite image file]  output sprite image file
+### Usage in Code
+    var cssspriter = require('cssspriter');
+    cssspriter.init();
+    cssspriter.add(input_css_file_name , output_css_file_name);
+    cssspriter.process(output_sprite_image_dir);
 
 
 ==========
 ### css
-sprite-image:String
+    sprite-image:String
 
-sprite-width:Number
+    sprite-width:Number
 
-sprite-height:Number
+    sprite-height:Number
 
-sprite-margin-top:Number
+    sprite-margin-top:Number
 
-sprite-margin-bottom:Number
+    sprite-margin-bottom:Number
 
-sprite-margin-left:Number
+    sprite-margin-left:Number
 
-sprite-margin-right:Number
+    sprite-margin-right:Number
 
-sprite-align:[left/right]
+    sprite-align:[left/right]
 
 example
 ==========
