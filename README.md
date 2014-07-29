@@ -2,7 +2,7 @@
 
 Usage
 ==========
-Usage: cssspriter -i <file ...> -o <file ...>
+Usage: cssspriter -i file ... -o file ...
 
 Options:
 
