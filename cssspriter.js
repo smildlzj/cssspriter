@@ -15,7 +15,7 @@ var init = function(){
     data.images.clear();
 }
 
-var process = function(file){
+var process = function(file , direction){
     var dir;
     if(!file){
         //当前目录
@@ -39,7 +39,7 @@ var process = function(file){
         file = dir + file;
     }
 
-    css.process(file);
+    css.process(file , direction);
 
     //保存历史记录
     history.save({

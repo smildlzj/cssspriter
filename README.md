@@ -12,12 +12,14 @@ Usage
       -o,--outputs [file outputs]      output css files, split with ","
       -d , --dir [sprite image dir]    output sprite image dir
       -f , --file [sprite image file]  output sprite image file
+      -v , --vertical                  vertical direction
+      -h , --horizontal                horizontal direction
 
 ### Usage in Code
     var cssspriter = require('cssspriter');
     cssspriter.init();
     cssspriter.add(input_css_file_name , output_css_file_name);
-    cssspriter.process(output_sprite_image_dir);
+    cssspriter.process(output_sprite_image_dir , direction[vertical/horizontal]);
 
 
 ==========
