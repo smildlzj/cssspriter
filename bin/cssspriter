@@ -25,6 +25,7 @@ program
     .option('-o,--outputs [file outputs]', 'output css files, split with ","')
     .option('-d , --dir [sprite image dir]', 'output sprite image dir')
     .option('-f , --file [sprite image file]', 'output sprite image file')
+    .option('-ws , --workspace [workspace dir]', 'workspace dir')
     .option('-v , --vertical', 'vertical direction')
     .option('-h , --horizontal', 'horizontal direction')
     .on('--help', handleHelpCommand)
@@ -36,17 +37,30 @@ if(program.inputs){
         return;
     }
 
+    var direction;
+
+    if(program.vertical){
+        direction = "vertical";
+    }
+
+    if(program.horizontal){
+        direction = "horizontal";
+    }
+
+    cssspriter = new cssspriter({
+        file : program.dir || program.file,
+        direction : direction,
+        workspace : program.workspace
+    });
+
+
     var inputs = program.inputs.split(","),
         outputs = (program.outputs || "").split(",");
 
     for(var i = 0 , len = inputs.length ; i < len ; i++){
         cssspriter.add(inputs[i] , i < outputs.length ? outputs[i] : null );
     }
-    var direction;
-    if(program.vertical){
-        direction = "vertical";
-    }
-    cssspriter.process(program.dir || program.file , direction);
+    cssspriter.process();
 
 }else{
     handleHelpCommand();
