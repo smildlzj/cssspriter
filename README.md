@@ -16,10 +16,12 @@ Usage
       -h , --horizontal                horizontal direction
 
 ### Usage in Code
-    var cssspriter = require('cssspriter');
-    cssspriter.init();
-    cssspriter.add(input_css_file_name , output_css_file_name);
-    cssspriter.process(output_sprite_image_dir , direction[vertical/horizontal]);
+    var sper = new cssspriter({
+        file : image_dir,
+        workspace : workspace
+    });
+    sper.add(file , file);
+    sper.process();
 
 
 ==========
@@ -44,43 +46,43 @@ example
 ==========
 ### test.css
     .download .normal{
-        sprite-image:"download-up.png";
+        /*sprite-image:"download-up.png";
         sprite-margin-top:2px;
         sprite-margin-bottom:2px;
-        sprite-margin-right:30px;
+        sprite-margin-right:30px;*/
     }
     .download .hover{
-        sprite-image:"download-over.png";
+        /*sprite-image:"download-over.png";
         sprite-margin-top:2px;
         sprite-margin-bottom:2px;
-        sprite-margin-right:30px;
+        sprite-margin-right:30px;*/
     }
     .download .down{
-        sprite-image:"download-down.png";
+        /*sprite-image:"download-down.png";
         sprite-margin-top:2px;
         sprite-margin-bottom:2px;
-        sprite-margin-right:30px;
+        sprite-margin-right:30px;*/
     }
     .play .normal{
-        sprite-image:"play-up.png";
+        /*sprite-image:"play-up.png";
         sprite-align:right;
         sprite-margin-top:1px;
         sprite-margin-bottom:1px;
-        sprite-margin-left:120px;
+        sprite-margin-left:120px;*/
     }
     .play .hover{
-        sprite-image:"play-over.png";
+        /*sprite-image:"play-over.png";
         sprite-align:right;
         sprite-margin-top:1px;
         sprite-margin-bottom:1px;
-        sprite-margin-left:120px;
+        sprite-margin-left:120px;*/
     }
     .play .down{
-        sprite-image:"play-down.png";
+        /*sprite-image:"play-down.png";
         sprite-align:right;
         sprite-margin-top:1px;
         sprite-margin-bottom:1px;
-        sprite-margin-left:120px;
+        sprite-margin-left:120px;*/
     }
 
 ### compile
